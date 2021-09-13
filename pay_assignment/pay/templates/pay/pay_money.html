@@ -1,0 +1,13 @@
+{% extends 'pay/base.html' %}
+{% block content %}
+    <h2> Pay Money </h2>
+    <form action="" method="POST" autocomplete="off">
+        {% csrf_token %}
+        Username : <input type="text" name="username">
+        Amount : <input type="text" name="amount">
+        <input type="submit">
+    </form>
+    {% if balance %}
+        Updated Balance : {{ balance }}
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <ul>
+        {% if user.is_authenticated %}
+            Hello {{ user.username }}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'transaction' %}">Transaction Log</a></li>
+            <li><a href="{% url 'add_money' %}">Add Money</a></li>
+            <li><a href="{% url 'pay_money' %}">Pay Money</a></li>
+            <li><a href="{% url 'balance' %}">Check Balance</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
+    </ul>
+    {% block content%}
+    {% endblock %}
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

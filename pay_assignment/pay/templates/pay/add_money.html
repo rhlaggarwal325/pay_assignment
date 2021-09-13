@@ -1,0 +1,17 @@
+{% extends 'pay/base.html' %}
+{% block content %}
+    <h2> Add Money To Your Wallet : </h2>
+    <form action="" method="POST" autocomplete="off">
+        {% csrf_token %}
+        Amount : <input type="text" name='amount'>
+        <input type="submit">
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+            <h5>{{ message }}</h5>
+        {% endfor %}
+    {% endif %}
+    {% if balance %}
+        Updated Balance : {{ balance }}
+    {% endif %}
+{% endblock %}

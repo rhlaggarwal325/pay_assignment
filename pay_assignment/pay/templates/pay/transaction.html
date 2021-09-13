@@ -1,0 +1,20 @@
+{% extends 'pay/base.html' %}
+{% block content %}
+    <h2>Transaction Log</h2>
+    <table style="border:1px solid black;">
+        <tr>
+            <th>Action</th>
+            <th>Amount</th>
+            <th>Dated</th>
+        </tr>
+        {% if queries %}
+                {% for x in queries %}
+            <tr>
+                    <td>{{ x.text }}</td>
+                    <td>{{ x.amount }}</td>
+                    <td>{{ x.created_at }}</td>
+            </tr>
+                {% endfor %}
+        {% endif %}
+    </table>
+{% endblock content %}

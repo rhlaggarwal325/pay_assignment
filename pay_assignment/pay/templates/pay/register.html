@@ -1,0 +1,10 @@
+{% extends 'pay/base.html' %}
+{% block content %}
+    <h2> Register Here </h2>
+    <form action="" method="POST" autocomplete="off">
+        {% csrf_token %}
+        Username : <input type="text" name="username">
+        Password : <input type="password" name="password">
+        <input type="submit">
+    </form>
+{% endblock content %}
