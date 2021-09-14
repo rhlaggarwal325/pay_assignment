@@ -1,0 +1,22 @@
+Project's name : pay_assignment
+App's name : pay
+
+Libraries used : 
+django==3.2.7
+djangorestframework==3.12.4
+
+To run the project:
+python manage.py makemigrations pay
+python manage.py migrate
+
+python manage.py runserver
+
+Two API calls : 
+
+#user_id of the user of whom wallet, we want to query about
+
+http http://127.0.0.1:8000/pay/transact_paid/4/
+http http://127.0.0.1:8000/pay/transact_paid/<user_id>/
+
+http http://127.0.0.1:8000/pay/transact_add/4/
+http http://127.0.0.1:8000/pay/transact_add/<user_id>/
